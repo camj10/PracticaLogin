@@ -5,8 +5,8 @@ const UsuarioSchema = new Schema({
     contraseña: {
         type: String,
         required: [true, "Password is required"],
-        minlenght: [8, 'Password must be at 8 characters or longer']
-    }
+    },
+    ultHora:{ type:String,},
 }, { timestamps: true });
 
 module.exports = model('Usuario', UsuarioSchema); 

@@ -1,19 +1,22 @@
-const Usuario = require('../models/usuario');
+const Usuario = require("../model/usuario");
 
-const getUserById = async(req, res)=>{
-    const { userId } = req.params;
+const getUserById = async (req, res) => {
+  const { id } = req.user;
 
-    if(userId.length === 24){
-        Usuario.findById(userId).then((usuario)=>{
-            if(!usuario){
-                return res.json({mesnaje: "Usuario no encontrado"})
-            }else{
-                const{_id, contraseña, _id_v, ...resto} = usuario._doc;
-                res.json(resto); 
-            }
+  if (id.length === 24) {
+    Usuario.findById(id).then((usuario) => {
+      if (!usuario) {
+        return res.json({
+          mensaje: "No se encontro ningun usuario con esa ID",
         });
-    } else{
-        res.json({mensaje: "Estas ingresando una contraseña incorrecta"});
-    }
+      } else {
+        const { _id, contraseña, __v, ...resto } = usuario._doc;
+        res.json(resto);
+      }
+    });
+  } else {
+    res.json({ mensaje: "Estas enviando una contraseña incorrecta" });
+  }
 };
-module.exports = getUserById
+
+module.exports = getUserById;
