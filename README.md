@@ -2,7 +2,7 @@
 
 Consta de un registro e inicio de sesión de usuario
 
-##Instalación
+## Instalación:
 En primer lugar debes tener instalado una serie de programas, los cuales serían:
 
 ### 1.Node: Descargas
