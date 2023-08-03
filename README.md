@@ -12,7 +12,6 @@ En primer lugar debes tener instalado una serie de programas, los cuales serían
 - Node
 - MongoDB
 - Git
-- Visual Studio Code o algún entorno similar
 
 
 
